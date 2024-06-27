@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div
-      className="w-full flex px-10 py-4 justify-between"
+      className="w-full flex px-10 py-4 justify-between top-0 bg-white sticky z-10"
       style={{ boxShadow: "0px 0px 2px  #897d7d" }}
     >
       <div className="text px-6 py-2 bg-stone-200 text-orange-600 font-semibold content-center">
@@ -91,7 +91,7 @@ const Navbar = () => {
         <div className="relative">
           <PiBellSimpleLight className="h-8 w-8" />
           <div
-            className="absolute top-1 right-1 bg-orange-600 -translate-y-1/2 translate-x-1/2 text-white rounded-full"
+            className="absolute top-1 right-1 bg-orange-600 -translate-y-1/2 translate-x-1/2 text-white rounded-full "
             style={{ width: "6px", height: "6px" }}
           />
         </div>

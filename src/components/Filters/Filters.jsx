@@ -3,8 +3,8 @@ import React, { useState } from "react";
 
 const filterArray = ["Job Preview", "Applicants", "Match", "Messages"];
 
-const MyComponent = () => {
-  const [activeIndex, setActiveIndex] = useState(-1);
+const JobOptions = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClick = (index) => {
     setActiveIndex(index);
@@ -29,4 +29,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default JobOptions;
