@@ -15,10 +15,10 @@ const JobOptions = () => {
       {filterArray.map((filter, index) => (
         <button
           key={index}
-          className={`text ${
+          className={`text  ${
             index === activeIndex
-              ? "text-orange-500 border-b-2 border-orange-500"
-              : "text-gray-500"
+              ? "text-Orange font-semibold border-b-2 border-Orange"
+              : "text-grayMedium font-medium"
           } h-full content-center`}
           onClick={() => handleClick(index)}
         >

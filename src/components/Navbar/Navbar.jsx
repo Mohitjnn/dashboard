@@ -19,11 +19,11 @@ const Navbar = () => {
       <div className="text px-6 py-2 bg-stone-200 text-orange-600 font-semibold content-center">
         Logo
       </div>
-      <div className="w-fit  p-2 flex space-x-6 text-m bg-white rounded-[5vh] border-2 items-center">
+      <div className="w-fit  p-2 flex justify-between space-x-10 text-m bg-white rounded-[5vh] border-2 items-center">
         <button
-          className={`flex w-full justify-center gap-1 space-x-4 rounded-3xl px-2 py-3 ${
+          className={`flex w-full justify-center gap-1 space-x-4 rounded-3xl px-2 py-3 font-medium ${
             activeButton === "jobs"
-              ? "bg-orange-600 text-white border-orange-300 border-2"
+              ? "bg-Orange text-white border-orangeBorder border-2"
               : " text-gray-500 "
           }`}
           onClick={() => handleButtonClick("jobs")}
@@ -41,9 +41,9 @@ const Navbar = () => {
         </button>
         <div className="relative">
           <button
-            className={`flex w-full justify-center gap-1 space-x-4 rounded-3xl  px-2 py-3 ${
+            className={`flex w-full justify-center gap-1 space-x-4 rounded-3xl  px-2 py-3 font-medium ${
               activeButton === "messages"
-                ? "bg-orange-600 text-white border-orange-300 border-2"
+                ? "bg-Orange text-white border-orangeBorder border-2"
                 : "bg-white text-gray-500 "
             }`}
             onClick={() => handleButtonClick("messages")}
@@ -65,15 +65,15 @@ const Navbar = () => {
             className={`absolute top-4 left-6 translate-x-1/3  ${
               activeButton === "messages"
                 ? "bg-white -translate-y-1/3"
-                : "bg-orange-600 -translate-y-1/2"
+                : "bg-Orange -translate-y-1/2"
             } text-white rounded-full  `}
             style={{ width: "6px", height: "6px" }}
           />
         </div>
         <button
-          className={`flex w-full justify-center gap-1 space-x-6 rounded-3xl  px-2 py-3 ${
+          className={`flex w-full justify-center gap-1 space-x-6 rounded-3xl  px-2 py-3 font-medium ${
             activeButton === "payments"
-              ? "bg-orange-600 text-white border-orange-300 border-2"
+              ? "bg-Orange text-white border-orangeBorder border-2"
               : " text-gray-500 "
           }`}
           onClick={() => handleButtonClick("payments")}
@@ -91,7 +91,7 @@ const Navbar = () => {
         <div className="relative">
           <PiBellSimpleLight className="h-8 w-8" />
           <div
-            className="absolute top-1 right-1 bg-orange-600 -translate-y-1/2 translate-x-1/2 text-white rounded-full "
+            className="absolute top-1 right-1 bg-Orange -translate-y-1/2 translate-x-1/2 text-white rounded-full "
             style={{ width: "6px", height: "6px" }}
           />
         </div>
