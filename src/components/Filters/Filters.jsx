@@ -13,17 +13,24 @@ const JobOptions = () => {
   return (
     <>
       {filterArray.map((filter, index) => (
-        <button
-          key={index}
-          className={`text  ${
-            index === activeIndex
-              ? "text-Orange font-semibold border-b-2 border-Orange"
-              : "text-grayMedium font-medium"
-          } h-full content-center`}
-          onClick={() => handleClick(index)}
-        >
-          {filter}
-        </button>
+        <div>
+          <button
+            key={index}
+            className={`text h-full content-center flex flex-col items-center ${
+              index === activeIndex
+                ? "text-Orange font-black"
+                : "text-grayMedium font-medium"
+            }`}
+            onClick={() => handleClick(index)}
+          >
+            {filter}
+            <span
+              className={`absolute w-16 h-[2px] bottom-0 ${
+                index === activeIndex ? "bg-Orange" : ""
+              }`}
+            ></span>
+          </button>
+        </div>
       ))}
     </>
   );

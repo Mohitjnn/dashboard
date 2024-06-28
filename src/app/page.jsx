@@ -10,8 +10,8 @@ const jobData = {
   PostTime: "2",
   Active: true,
   Location: "Delaware,USA",
-  payRangeMin: 300000,
-  payRangeMax: 400000,
+  payRangeMin: "300k",
+  payRangeMax: "400k",
   skillsRequired: [
     { Name: "Figma", icon: "/figma.png" },
     { Name: "Adobe Illustrator", icon: "/adobeIllustrator.png" },
@@ -66,17 +66,17 @@ export default function Home() {
     <main>
       <center>
         <section
-          className="relative w-full flex justify-start px-20 items-center space-x-20 h-[10vh]"
+          className="relative w-full flex justify-start px-24 items-center space-x-20 h-[7vh]"
           style={{ boxShadow: "0px 0px 2px  #897d7d" }}
         >
           <JobOptions />
         </section>
         <section className="w-full flex justify-between ">
-          <div className="w-[75%] border-r-2 ">
+          <div className="w-[76%] border-r-2 ">
             <JobData jobData={jobData} />
             <CompanyData companyData={companyData} />
           </div>
-          <div className="w-[25%] border-l-2 bg-[#FCFCFC] flex flex-col p-10">
+          <div className="w-[24%] border-l-2 bg-[#FCFCFC] flex flex-col p-6">
             <Users />
           </div>
         </section>

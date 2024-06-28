@@ -7,7 +7,7 @@ const Users = () => {
   return (
     <>
       <div className="flex space-x-4 w-full">
-        <button className="flex w-full justify-center h-fit space-x-2 rounded-lg items-center px-2  py-2 bg-OrangeLight border-[1px] border-Orange text-m font-medium text-buttonOrange">
+        <button className="flex w-full justify-center h-fit space-x-2 rounded-lg items-center p-2 bg-OrangeLight border-[1px] border-Orange text-sm font-medium text-Orange">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -26,11 +26,11 @@ const Users = () => {
 
           <span> Delete Job </span>
         </button>
-        <button className="flex w-full justify-center h-fit space-x-2 rounded-lg items-center px-2  py-2 bg-Orange border-[1px] border-orangeBorder text-m font-medium text-white">
+        <button className="flex w-full justify-center h-fit space-x-2 rounded-lg items-center p-2 bg-Orange border-[1px] border-orangeBorder text-sm font-medium text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             style={{ fill: "#ffffff" }}
           >
@@ -44,12 +44,12 @@ const Users = () => {
           <div className="w-fit space-x-2 flex items-center ">
             <IoPeopleOutline
               style={{
-                height: 25,
-                width: 25,
+                height: 20,
+                width: 20,
                 color: "#3D3D3D",
               }}
             />
-            <h1 className="text-m font-medium text-grayDark2">Applicants</h1>
+            <h1 className="text-sm font-semibold text-grayDark2">Applicants</h1>
           </div>
           <h1 className="text-m font-bold text-grayDark2">400</h1>
         </div>
@@ -57,12 +57,12 @@ const Users = () => {
           <div className="w-fit space-x-2 flex items-center ">
             <BsPersonCheck
               style={{
-                height: 25,
-                width: 25,
+                height: 20,
+                width: 20,
                 color: "#3D3D3D",
               }}
             />
-            <h1 className="text-m font-medium text-grayDark2">Matches</h1>
+            <h1 className="text-sm font-semibold text-grayDark2">Matches</h1>
           </div>
           <h1 className="text-m font-bold text-grayDark2">100</h1>
         </div>
@@ -70,12 +70,12 @@ const Users = () => {
           <div className="w-fit space-x-2 flex items-center ">
             <BiMessage
               style={{
-                height: 25,
-                width: 25,
+                height: 20,
+                width: 20,
                 color: "#3D3D3D",
               }}
             />
-            <h1 className="text-m font-medium text-grayDark2">Messages</h1>
+            <h1 className="text-sm font-semibold text-grayDark2">Messages</h1>
           </div>
           <h1 className="text-m font-bold text-grayDark2">147</h1>
         </div>
@@ -83,12 +83,12 @@ const Users = () => {
           <div className="w-fit space-x-2 flex items-center ">
             <IoEyeOutline
               style={{
-                height: 25,
-                width: 25,
+                height: 20,
+                width: 20,
                 color: "#3D3D3D",
               }}
             />
-            <h1 className="text-m font-medium text-grayDark2">Views</h1>
+            <h1 className="text-sm font-semibold text-grayDark2">Views</h1>
           </div>
           <h1 className="text-m font-bold text-grayDark2">800</h1>
         </div>

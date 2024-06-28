@@ -3,24 +3,19 @@ import { LiaCoinsSolid } from "react-icons/lia";
 import Image from "next/image";
 
 const JobData = ({ jobData }) => {
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-
   return (
     <>
-      <div className="w-full flex flex-col border-b-2 px-20 py-8 space-y-4 items-start justify-start">
+      <div className="w-full flex flex-col border-b-2 px-24 py-7 space-y-3 items-start justify-start">
         <div className="flex space-x-4 items-center">
-          <h1 className="subHeading text-gray-700 font-semibold">
+          <h1 className="text-3xl text-grayDark2 font-black">
             {jobData.Position}
           </h1>
-          <div className="flex w-fit space-x-1 text-grayMedium items-center">
-            <div className="w-1 h-1 rounded-full bg-grayMedium" />
+          <div className="flex w-fit space-x-1 text-grayMedium items-center justify-start">
+            <div className="w-1 h-1 rounded-full bg-gray-200" />
             <p className="text-xs font-medium">{`posted ${jobData.PostTime} days ago`}</p>
           </div>
           <div
-            className={`flex space-x-2 border-2  items-center w-fit px-2 py-1 ${
+            className={`flex space-x-1 border-2  items-center w-fit  px-1 ${
               jobData.Active
                 ? "bg-green-50 border-greenMedium"
                 : "bg-orange-200 border-orange-400"
@@ -64,52 +59,50 @@ const JobData = ({ jobData }) => {
           </div>
           <div className="flex w-fit space-x-1 items-center">
             <LiaCoinsSolid className="h-10 w-10" />
-            <h1>{`${formatter.format(jobData.payRangeMin)} - ${formatter.format(
-              jobData.payRangeMax
-            )} `}</h1>
+            <h1>{`$${jobData.payRangeMin} - $${jobData.payRangeMax} `}</h1>
           </div>
         </div>
       </div>
-      <div className="w-full flex border-b-2 px-20 py-8 space-x-10 items-start justify-start">
+      <div className="w-full flex border-b-2 px-24 py-7 space-x-24 items-start justify-start">
         <div className="flex flex-col space-y-2 items-start justify-center">
-          <h1 className="text-grayLight2 font-medium text-sm">
+          <h1 className="text-grayLight2 font-medium text-xs">
             Skills Required
           </h1>
           {jobData.skillsRequired.map((skill) => (
-            <div className=" flex p-1 text-sm space-x-1 font-medium text-blueDark justify-start items-center w-fit h-fit border-2 rounded-lg">
-              <Image src={skill.icon} height={10} width={20} />
+            <div className=" flex p-[0.1rem] text-xs space-x-1 font-medium text-blueDark justify-start items-center w-fit h-fit border-2 rounded-md">
+              <Image src={skill.icon} height={10} width={15} />
               <h1>{skill.Name}</h1>
             </div>
           ))}
         </div>
         <div className="flex flex-col items-start justify-center">
-          <h1 className="text-grayLight2 font-medium text-sm">
+          <h1 className="text-grayLight2 font-medium text-xs">
             Preffered Language
           </h1>
-          <h1 className="text-grayDark2 font-bold text-m">
+          <h1 className="text-grayDark2 font-bold text-sm">
             {jobData.prefferedLanguage}
           </h1>
         </div>
         <div className="flex flex-col items-start justify-center">
-          <h1 className="text-grayLight2 font-medium text-sm">Type</h1>
-          <h1 className="text-grayDark2 font-bold text-m">{jobData.Type}</h1>
+          <h1 className="text-grayLight2 font-medium text-xs">Type</h1>
+          <h1 className="text-grayDark2 font-bold text-sm">{jobData.Type}</h1>
         </div>
         <div className="flex flex-col items-start justify-center">
-          <h1 className="text-grayLight2 font-medium text-sm">
+          <h1 className="text-grayLight2 font-medium text-xs">
             Years Of Experience
           </h1>
-          <h1 className="text-grayDark2 font-bold text-m">
+          <h1 className="text-grayDark2 font-bold text-sm">
             {`${jobData.ExperienceYears}+ Years of Experience`}
           </h1>
         </div>
       </div>
-      <div className="w-full flex-col border-b-[2px] px-20 py-8 font-medium text-m text-left">
-        <h1 className="text-grayLight2">About The Job</h1>
-        <div>
+      <div className="w-full flex-col border-b-[2px] px-24 py-10 space-y-2 font-medium text-m  text-left">
+        <h1 className="text-grayLight2 text-xs">About The Job</h1>
+        <ol className="list-decimal pl-4 flex flex-col justify-start items-start">
           {jobData.jobDetails.description.map((description) => (
-            <p className="text-gray-700 ">{description}</p>
+            <li className="text-gray-700 ">{description}</li>
           ))}
-        </div>
+        </ol>
         <h1 className="text-gray-700 ">Benefits:</h1>
         <div>
           {jobData.jobDetails.benefits.map((benefit) => (
