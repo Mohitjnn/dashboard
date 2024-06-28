@@ -1,6 +1,7 @@
 import JobOptions from "@/components/Filters/Filters";
 import { LiaCoinsSolid } from "react-icons/lia";
 import Image from "next/image";
+import Link from "next/link";
 
 const jobData = {
   Position: "Senior Product Designer",
@@ -30,6 +31,33 @@ const jobData = {
     Location: "In Person",
   },
 };
+
+const companyData = [
+  { title: "Company Size", property: "1k-2k" },
+  { title: "Type", property: "Private" },
+  {
+    title: "Sector",
+    property: "Information Technology, Infrastructure",
+  },
+  { title: "Funding", property: "Bootstrapped" },
+  {
+    title: "Founded In",
+    property: 2019,
+  },
+  {
+    title: "Founded By",
+    property: [
+      {
+        Name: "Scott Farquhar",
+        Link: "https://www.google.com/search?q=Scott+Farquhar",
+      },
+      {
+        Name: "Mike Cannon-Brookes",
+        Link: "https://www.google.com/search?q=Mike+Cannon-Brookes",
+      },
+    ],
+  },
+];
 
 export default function Home() {
   const formatter = new Intl.NumberFormat("en-US", {
@@ -175,8 +203,52 @@ export default function Home() {
                 Work Location: {jobData.jobDetails.Location}
               </h1>
             </div>
+            <div className="w-full flex flex-col border-b-2 space-y-4 px-20 py-8 items-start justify-start">
+              <div className="flex space-x-4 justify-start items-center">
+                <div className="h-[6vh] w-[6vh] relative">
+                  <Image
+                    src="/atlassian.png"
+                    fill={true}
+                    className="object-cover"
+                  />
+                </div>
+                <h1 className="text-gray-700 text font-semibold">Atlassian</h1>
+              </div>
+              <div className="flex flex-wrap justify-between items-center w-2/3 space-y-4">
+                {companyData.map((data, index) => (
+                  <div
+                    key={index}
+                    className="w-1/2 flex flex-col space-y-2 my-2 text-left"
+                  >
+                    <h1 className="text-gray-500 font-semibold">
+                      {data.title}
+                    </h1>
+                    {Array.isArray(data.property) ? (
+                      <h1 className="text-gray-700 font-semibold">
+                        {data.property.map((founder, idx) => (
+                          <span key={idx}>
+                            <Link
+                              target="_blank"
+                              className="hover:underline"
+                              href={founder.Link}
+                            >
+                              {founder.Name}
+                            </Link>
+                            {idx < data.property.length - 1 && ", "}
+                          </span>
+                        ))}
+                      </h1>
+                    ) : (
+                      <h1 className="text-gray-700 font-semibold">
+                        {data.property}
+                      </h1>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="w-[25%] border-l-2">section 2</div>
+          <div className="w-[25%] border-l-2 bg-slate-100">section 2</div>
         </section>
       </center>
     </main>
